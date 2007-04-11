@@ -1,0 +1,6 @@
+﻿Microsoft Visual Studio Solution File, Format Version 9.00
+# SharpDevelop 2.1.0.1611
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "boobs.engine", "boobs.engine.booproj", "{B86E7336-0498-486D-A199-FC19ED9740AF}"
+EndProject
+Global
+EndGlobal
