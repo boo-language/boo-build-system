@@ -33,7 +33,6 @@ print "Running ${filename}"
 
 using f = File.OpenText(filename):
 	builder = BoobsEngineBuilder(f)
-//	builder.References.Add(GetExtensionAssembly("Boobs.IO.Extensions"))
 	engine = builder.Build()
 	if engine:
 		engine.Execute()
@@ -41,3 +40,4 @@ using f = File.OpenText(filename):
 		print builder.Errors.ToString()
 
 gets()
+

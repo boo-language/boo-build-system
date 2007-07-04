@@ -30,6 +30,9 @@
   <ItemGroup>
     <Compile Include="FileExt.boo" />
     <Compile Include="AssemblyInfo.boo" />
+    <Compile Include="FileSet.boo" />
+    <Compile Include="FileSetEmptyException.boo" />
+    <Compile Include="FileSystemHelper.boo" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\boobs.engine\Boobs.Engine.booproj">

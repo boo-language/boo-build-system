@@ -38,12 +38,12 @@ class DependencyGraphExecutor:
 	private def ExecuteTask(t as Task, h as Hash):
 		return if not t or t.Executed 
 		
-		if t.Dependencies:
-			for childName as string in t.Dependencies:
-				ExecuteTask(h[childName] as Task, h) 
+		for childName as string in t.Dependencies:
+			ExecuteTask(h[childName] as Task, h) 
 		
-		if t.ShouldRun():
-			t.Block(t) if t.Block
-			
+		if t.ShouldRun() and t.Block: t.Block(t)
+
 		t.Executed = true
+
+
 

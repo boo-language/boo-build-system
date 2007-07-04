@@ -1,0 +1,46 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Boobs.Tests</RootNamespace>
+    <AssemblyName>Boobs.Tests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Boo.Lang.Useful" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\..\Arquivos de programas\NUnit 2.4.1\bin\nunit.framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.boo" />
+    <Compile Include="BoocFixture.boo" />
+    <Compile Include="FileExtFixture.boo" />
+    <Compile Include="FileSetFixture.boo" />
+    <Compile Include="TaskFixture.boo" />
+    <None Include="todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\extensions\boobs.compiler.extensions\Boobs.Compiler.Extensions.booproj">
+      <Project>{BA5A9FD1-0711-432C-830C-5CE35CDE3570}</Project>
+      <Name>Boobs.Compiler.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\extensions\boobs.io.extensions\Boobs.IO.Extensions.booproj">
+      <Project>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</Project>
+      <Name>Boobs.IO.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
+</Project>

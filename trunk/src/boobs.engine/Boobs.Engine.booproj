@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="BoobsEngine.boo" />
     <Compile Include="AssemblyInfo.boo" />
+    <Compile Include="Context.boo" />
     <Compile Include="Task.boo" />
     <Compile Include="FileTask.boo" />
     <Compile Include="Builder\BoobsEngineBuilder.boo" />
