@@ -11,7 +11,6 @@
 namespace Boobs.Engine.Builder
 
 import System
-
 import Boobs.Engine
 	
 class BoobsBaseScript:
@@ -27,12 +26,13 @@ class BoobsBaseScript:
 	def Task(name as string, dependencies as List, block as TaskBlock):
 		_engine.AddTask(name, dependencies, block)
 
-	def FileTask(name as string, dependencies as List):
+	def File(name as string, dependencies as List):
 		_engine.AddFileTask(name, dependencies)
 
-	def FileTask(name as string, block as TaskBlock):
+	def File(name as string, block as TaskBlock):
 		_engine.AddFileTask(name, block)
 
-	def FileTask(name as string, dependencies as List, block as TaskBlock):
+	def File(name as string, dependencies as List, block as TaskBlock):
 		_engine.AddFileTask(name, dependencies, block)
+
 

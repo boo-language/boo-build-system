@@ -1,0 +1,87 @@
+import Boobs.Engine
+import Boobs.Compiler.Extensions
+import Boobs.IO.Extensions
+
+import System.Collections.Generic
+
+def ToDo(name):
+	print "TODO: Implement ${name}"
+	
+def Building(name):
+	print "Building ${name}..."
+
+############################
+# Tasks
+
+Task("default", ["build"])
+
+Task("clean", ["remove build dir", "build"])
+
+Task("remove build dir") do:
+	if Exist("build"): RmDir("build", true)
+
+Task("build", ["init build dir", "build boobs", "build examples", "build tests"])
+
+Task("init build dir") do:
+	MkDir("build")
+	Cp(FileSet("lib/*.dll").Files, "build", true)
+
+Task("build boobs", ["build engine", "build extensions"]) do (ctx):
+	Building ctx.Name
+	bc = Booc(
+		SourcesSet   : FileSet("tools/boobs/**/*.boo"),
+		OutputFile   : "build/boobs.exe"
+		)
+	bc.ReferencesSet.Include("build/boobs.engine.dll")
+	bc.Execute()
+
+Task("build engine") do (ctx):
+	Building ctx.Name
+	Booc(
+		SourcesSet  : FileSet("src/boobs.engine/**/*.boo"),
+		OutputFile  : "build/boobs.engine.dll",
+		OutputTarget: TargetType.Library 
+		).Execute()
+
+Task("build extensions", ["build io.extensions", "build compiler.extensions"])
+
+Task("build io.extensions") do (ctx):
+	Building ctx.Name
+	Booc(
+		SourcesSet  : FileSet("src/extensions/boobs.io.extensions/**/*.boo"),
+		OutputFile  : "build/boobs.io.extensions.dll",
+		OutputTarget: TargetType.Library 
+		).Execute()
+
+Task("build compiler.extensions") do (ctx):
+	Building ctx.Name
+	bc = Booc(
+		SourcesSet   : FileSet("src/extensions/boobs.compiler.extensions/**/*.boo"),
+		OutputFile   : "build/boobs.compiler.extensions.dll",
+		OutputTarget : TargetType.Library 
+		)
+	bc.ReferencesSet.Include("build/boobs.io.extensions.dll")
+	bc.Execute()
+
+Task("build examples") do (ctx):
+	Building ctx.Name
+	bc = Booc(
+		SourcesSet   : FileSet("src/boobs.example/**/*.boo"),
+		OutputFile   : "build/boobs.example.exe"
+		)
+	bc.ReferencesSet.Include("build/boobs.engine.dll")
+	bc.Execute()
+
+Task("build tests") do (ctx):
+	Building ctx.Name
+	bc = Booc(
+		SourcesSet   : FileSet("src/boobs.tests/**/*.boo"),
+		OutputFile   : "build/boobs.tests.dll",
+		OutputTarget : TargetType.Library 
+		)
+	bc.ReferencesSet.Include("build/boobs.io.extensions.dll")
+	bc.ReferencesSet.Include("build/boobs.compiler.extensions.dll")
+	bc.ReferencesSet.Include("nunit.framework.dll")
+	bc.Execute()
+
+

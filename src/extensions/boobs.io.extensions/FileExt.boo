@@ -11,19 +11,60 @@
 namespace Boobs.IO.Extensions
 
 import System
+import System.Collections.Generic
 import System.IO
 
-def exist(filename as string):
-	return File.Exists(filename)
+def Exist(name as string):
+	exist = File.Exists(name)
+	exist = Directory.Exists(name) if not exist
+	return exist
 
-def cp(source as string, target as string):
+def Cp(source as string, target as string):
 	File.Copy(source, target)
 	
-def cp(source as string, target as string, overwrite as bool):
+def Cp(source as string, target as string, overwrite as bool):
 	File.Copy(source, target, overwrite)
 
-def mv(source as string, target as string):
-	File.Move(source, target);
+def Cp(sources as List of string, targetDir as string):
+	for source in sources:
+		target = Path.Combine(targetDir, Path.GetFileName(source))
+		File.Copy(source, target)
+
+def Cp(sources as List of string, targetDir as string, overwrite as bool):
+	for source in sources:
+		target = Path.Combine(targetDir, Path.GetFileName(source))
+		File.Copy(source, target, overwrite)
+
+def Mv(source as string, target as string):
+	File.Move(source, target)
 	
-def rm(filename as string):
+def Rm(filename as string):
 	File.Delete(filename)
+
+def MkDir(path as string):
+	Directory.CreateDirectory(path)
+
+def RmDir(dirname as string):
+	Directory.Delete(dirname)
+	
+def RmDir(path as string, recursive as bool):
+	Directory.Delete(path, recursive)
+
+def IsUpToDate(target as string, source as string):
+	return true unless File.Exists(source)
+	return false unless File.Exists(target)
+
+	targetInfo = FileInfo(target)
+	sourceInfo = FileInfo(source)
+		
+	return targetInfo.LastAccessTimeUtc >= sourceInfo.LastAccessTimeUtc
+
+def IsUpToDate(target as string, sources as List of string):
+	for source in sources:
+		if not IsUpToDate(target, source): return false
+	
+	return true
+
+
+
+

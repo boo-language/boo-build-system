@@ -73,6 +73,7 @@ class ScriptLoader:
 		
 	private def CompileScript(code as string) as CompilerContext:
 		compiler = BooCompiler()
+		compiler.Parameters.Ducky = true
 		compiler.Parameters.Pipeline = CompileToMemory()
 		compiler.Parameters.Input.Add(StringInput("<code>", code))
 		compiler.Parameters.OutputType = CompilerOutputType.Library
@@ -91,3 +92,4 @@ class ScriptLoader:
 			_type = _result.GeneratedAssembly.GetType("__Runner__")
 			
 		return len(result.Errors) == 0
+

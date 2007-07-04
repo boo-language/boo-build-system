@@ -33,5 +33,15 @@
   <ItemGroup>
     <Compile Include="Program.boo" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\boobs.engine\Boobs.Engine.booproj">
+      <Project>{B86E7336-0498-486D-A199-FC19ED9740AF}</Project>
+      <Name>Boobs.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\extensions\boobs.compiler.extensions\Boobs.Compiler.Extensions.booproj">
+      <Project>{BA5A9FD1-0711-432C-830C-5CE35CDE3570}</Project>
+      <Name>Boobs.Compiler.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
 </Project>
