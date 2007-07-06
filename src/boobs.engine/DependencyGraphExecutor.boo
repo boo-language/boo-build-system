@@ -15,6 +15,8 @@ import System
 class DependencyGraphExecutor:
 """Description of DependencyGraphExecutor"""
 
+	event RunTask as RunTaskHandler
+
 	_tasks as List
 	_target as string
 	
@@ -37,6 +39,7 @@ class DependencyGraphExecutor:
 
 	private def ExecuteTask(t as Task, h as Hash):
 		return if not t or t.Executed 
+		RunTask(t.Name)
 		
 		for childName as string in t.Dependencies:
 			ExecuteTask(h[childName] as Task, h) 
@@ -44,6 +47,7 @@ class DependencyGraphExecutor:
 		if t.ShouldRun() and t.Block: t.Block(t)
 
 		t.Executed = true
+
 
 
 

@@ -21,4 +21,5 @@ class TargetNotFoundException(Exception):
 		super(BuildMessage(target), innerException)
 
 	private def BuildMessage(target as string):
-		return "Target: ${target}"
+		return "Could not find target: ${target}"
+
