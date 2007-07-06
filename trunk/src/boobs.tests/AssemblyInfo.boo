@@ -6,11 +6,11 @@ import System.Runtime.InteropServices
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Boobs.Tests")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Unit tests for the Boo Build System")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Boobs.Tests")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCopyright("Copyright © 2007 Georges Benatti Jr")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -25,4 +25,5 @@ import System.Runtime.InteropServices
 // You can specify all values by your own or you can build default build and revision
 // numbers with the '*' character (the default):
 
-[assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("0.2.0.0")]
+

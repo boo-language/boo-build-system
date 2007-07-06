@@ -16,8 +16,10 @@ import System.Collections
 class BoobsEngine:
 """Description of BoobsEngine."""
 
+	event RunTask as RunTaskHandler
+
 	_tasks = []
-	
+		
 	def constructor():
 		pass
 		
@@ -64,4 +66,7 @@ class BoobsEngine:
 		
 	protected def ExecuteDependencyGraph(target as string):
 		dgx = DependencyGraphExecutor(_tasks, target)
+		dgx.RunTask += { taskName as string | RunTask(taskName) }
 		dgx.Execute()
+
+

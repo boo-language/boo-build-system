@@ -15,17 +15,83 @@ import System.Collections
 import System.IO
 import System.Reflection
 
+import Boo.Lang.Useful.CommandLine
+
 import Boobs.Engine.Builder
 
-filename = Path.Combine(Environment.CurrentDirectory, "boobsfile")
+class Program:
+	
+	_cmdLine = BoobsCommandLine()
 
-print "Running ${filename}"
+	def PrintGreetings():
+		print "Boo Build System - version 0.2\n"
 
-using f = File.OpenText(filename):
-	builder = BoobsEngineBuilder(f)
-	engine = builder.Build()
-	if engine:
-		engine.Execute()
-	else:
-		print builder.Errors.ToString()
+	def ProcessOptions(args as (string)):
+		try:
+			_cmdLine.Parse(args)
+		except x as CommandLineException:
+			error = x
+
+		if error is not null or _cmdLine.Help:
+			print error.Message if error is not null
+			Usage()
+			return false
+			
+		return true
+
+	def Usage():
+		print "Usage: Boobs [options]"
+		print "Options: "
+		_cmdLine.PrintOptions()
+		print "\nThe file 'boobsfile' will be used if no buildfile is specified.\n"
+
+	def Process():
+		filename = GetFileName()
+	
+		if not File.Exists(filename):
+			print "Could not find '${filename}'\n"
+			return false
+		
+		print "Running buildfile: ${filename}\n"
+	
+		return ExecuteScript(filename)
+		
+	def GetFileName():
+		if _cmdLine.File:
+			filename = Path.Combine(Environment.CurrentDirectory, _cmdLine.File)
+		else:
+			filename = Path.Combine(Environment.CurrentDirectory, "boobsfile")
+		return filename		
+
+	def ExecuteScript(filename as string):
+		try:
+			using f = File.OpenText(filename):
+				builder = BoobsEngineBuilder(f)
+				engine = builder.Build()
+				if engine:
+					engine.RunTask += {taskName as string | print "${taskName}:\n"}
+					
+					if _cmdLine.Target:
+						engine.Execute(_cmdLine.Target)
+					else:
+						engine.Execute()
+				else:
+					print builder.Errors.ToString()
+		except ex:
+			print ex.Message
+			return false
+	
+		return true
+	
+	def Main(args as (string)):
+		PrintGreetings()
+		if ProcessOptions(args):
+			if Process(): return 0
+		return -1
+
+[STAThread]
+def Main(argv as (string)):
+	return Program().Main(argv)
+
+
 

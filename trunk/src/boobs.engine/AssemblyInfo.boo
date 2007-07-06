@@ -22,7 +22,7 @@ import System.Runtime.CompilerServices
 [assembly: AssemblyConfiguration('')]
 [assembly: AssemblyCompany('')]
 [assembly: AssemblyProduct('Boobs')]
-[assembly: AssemblyCopyright('Copyright © 2006 Georges Benatti Jr')]
+[assembly: AssemblyCopyright('Copyright © 2007 Georges Benatti Jr')]
 [assembly: AssemblyTrademark('')]
 [assembly: AssemblyCulture('')]
 
@@ -33,4 +33,5 @@ import System.Runtime.CompilerServices
 // You can specify all values by your own or you can build default build and revision
 // numbers with the '*' character (the default):
 
-[assembly: AssemblyVersion("0.1.0.0")]
+[assembly: AssemblyVersion("0.2.0.0")]
+
