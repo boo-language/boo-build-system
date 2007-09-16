@@ -47,7 +47,3 @@ class DependencyGraphExecutor:
 		if t.ShouldRun() and t.Block: t.Block(t)
 
 		t.Executed = true
-
-
-
-

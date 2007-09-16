@@ -19,6 +19,7 @@ class BoobsEngine:
 	event RunTask as RunTaskHandler
 
 	_tasks = []
+	_description = ""
 		
 	def constructor():
 		pass
@@ -32,22 +33,30 @@ class BoobsEngine:
 		ExecuteDependencyGraph(target)
 
 	def AddTask(name as string, dependencies as List):
-		_tasks.Add(Task(name, Dependencies: dependencies))
+		_tasks.Add(Task(name, Description: ConsumeDescription(), Dependencies: dependencies))
 		
 	def AddTask(name as string, block as TaskBlock):
-		_tasks.Add(Task(name, Block: block))
+		_tasks.Add(Task(name, Description: ConsumeDescription(), Block: block))
 
 	def AddTask(name as string, dependencies as List, block as TaskBlock):
-		_tasks.Add(Task(name, Dependencies: dependencies, Block: block))
+		_tasks.Add(Task(name, Description: ConsumeDescription(), Dependencies: dependencies, Block: block))
 
 	def AddFileTask(name as string, dependencies as List):
-		_tasks.Add(FileTask(name, Dependencies: dependencies))
+		_tasks.Add(FileTask(name, Description: ConsumeDescription(), Dependencies: dependencies))
 
 	def AddFileTask(name as string, block as TaskBlock):
-		_tasks.Add(FileTask(name, Block: block))
+		_tasks.Add(FileTask(name, Description: ConsumeDescription(), Block: block))
 
 	def AddFileTask(name as string, dependencies as List, block as TaskBlock):
-		_tasks.Add(FileTask(name, Dependencies: dependencies, Block: block))
+		_tasks.Add(FileTask(name, Description: ConsumeDescription(), Dependencies: dependencies, Block: block))
+
+	def SetDescription(description as string):
+		_description = description
+		
+	protected def ConsumeDescription():
+		actualDesciption = _description
+		_description = ""
+		return actualDesciption
 		
 	protected def UnifyTasks():
 		temp = {}

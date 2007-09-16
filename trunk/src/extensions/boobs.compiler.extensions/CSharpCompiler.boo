@@ -17,6 +17,7 @@ import System
 import System.IO
 import System.Text.RegularExpressions
 import System.CodeDom.Compiler
+import System.Reflection
 import Microsoft.CSharp
 
 class Csc(CompilerBase):
@@ -71,6 +72,14 @@ class Csc(CompilerBase):
 	def constructor(baseDir as string):
 		super(baseDir)
 		
+	def Execute():
+		if not _name or _name == string.Empty:
+			Name = FindCSharpCompiler()
+		super()
+	
+	private def FindCSharpCompiler() as string:
+		return CSharpCompilerFinder().Find()
+		
 	override def WriteOptions():
 		WriteOption("fullpaths")
 		WriteOption("baseadress",BaseAdress.ToString()) if BaseAdress != -1
@@ -103,3 +112,34 @@ class Csc(CompilerBase):
 		get:
 			return "cs"
 
+class CSharpCompilerFinder:
+
+	def Find():
+		if Boo.Lang.Useful.PlatformInformation.IsMono:
+			return FindMcs()
+		else:
+			return FindCsc()
+			
+	private def FindMcs():
+		dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
+		path = Path.Combine(dir, "mcs.exe")
+		if File.Exists(path): return path
+		return "mcs" //try msc in PATH
+			
+	private def FindCsc():
+		csc = FindLocalCsc()
+		if csc: return csc
+		csc = FindInFramework()
+		if csc: return csc
+		return "csc" //try csc in PATH
+		
+	private def FindLocalCsc():
+		dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
+		path = Path.Combine(dir, "csc.exe")
+		if File.Exists(path): return path
+		return null
+		
+	private def FindInFramework():
+		asm = Assembly.Load("Boobs.Win32.Helper")
+		fit as duck = asm.GetType("Boobs.Win32.Helper.FrameworkInformation")
+		return Path.Combine(fit.Actual.FullPath, "csc.exe")

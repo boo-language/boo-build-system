@@ -35,4 +35,6 @@ class BoobsBaseScript:
 	def File(name as string, dependencies as List, block as TaskBlock):
 		_engine.AddFileTask(name, dependencies, block)
 
+	def Desc(description as string):
+		_engine.SetDescription(description)
 

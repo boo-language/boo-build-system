@@ -22,6 +22,9 @@ class Task:
 	[getter(Name)]
 	_name as string
 	
+	[property(Description)]
+	_description = ""
+	
 	[property(Dependencies)]
 	_dependencies = []
 	
