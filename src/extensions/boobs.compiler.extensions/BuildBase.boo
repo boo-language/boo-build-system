@@ -119,6 +119,3 @@ abstract class BuildBase(Exec):
 	def Resources(pattern as string):
 		ResourcesSet.Include(pattern)
 
-
-
-

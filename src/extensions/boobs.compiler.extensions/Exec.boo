@@ -120,8 +120,8 @@ class Exec:
 		
 	private def StartProcess() as Process:
 		process = Process()
-		PrepareProcess(process)    
-		process.Start()  
+		PrepareProcess(process)
+		process.Start()
 		_stdOut = process.StandardOutput
 		_stdErr = process.StandardError
 		return process

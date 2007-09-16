@@ -88,13 +88,11 @@ abstract class CompilerBase(BuildBase):
 			return
 		# This will clean up the task if the same object is run more than once
 		Reset()
-		
 		# Scan explicity, not really needed, but I want to be clear what is going
 		# on. May take a while time if there are lots of files and complex patterns
 		SourcesSet.Scan()
 		ReferencesSet.Scan()
 		ModulesSet.Scan()
-		
 //		logger.Debug("Compiling ${SourcesSet.Files.Count} files to ${OutputFileInfo.FullName}") if logger.IsDebugEnabled
 		
 		try:
@@ -102,18 +100,15 @@ abstract class CompilerBase(BuildBase):
 				# Allows derived classes to add options
 				WriteOptions()
 				WriteCommonOptions()
-				
 				for reference in ReferencesSet.Files:
 					WriteOption("reference", reference)
 				for module in ModulesSet.Files:
 					WriteOption("addmodule", module)
 				WriteResources()
 				WriteSources()
-				
 				CloseOptionsWriter()
 				# This will call the compiler and compile everything
 				super.Execute()
-				
 				CreateSatelliteAssemblies()
 		ensure:
 			CleanUp()
