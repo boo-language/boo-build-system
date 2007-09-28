@@ -20,7 +20,7 @@ Task("init build dir") do:
 	MkDir("build")
 	Cp(FileSet("lib/*.dll").Files, "build", true)
 
-Task("build boobs", ["build engine", "build extensions"]) do (ctx):
+Task("build boobs", ["build engine", "build extensions", "build win32 helper"]) do (ctx):
 	bc = Booc(
 		SourcesSet   : FileSet("tools/boobs/**/*.boo"),
 		OutputFile   : "build/boobs.exe"
@@ -52,7 +52,15 @@ Task("build compiler.extensions") do (ctx):
 		OutputTarget : TargetType.Library 
 		)
 	bc.ReferencesSet.Include("build/boobs.io.extensions.dll")
+	bc.ReferencesSet.Include("lib/boo.lang.useful.dll")
 	bc.Execute()
+
+Task("build win32 helper") do:
+	Booc(
+		SourcesSet  : FileSet("src/boobs.win32.helper/**/*.boo"),
+		OutputFile  : "build/boobs.win32.helper.dll",
+		OutputTarget: TargetType.Library 
+		).Execute()
 
 Task("build examples") do (ctx):
 	bc = Booc(
@@ -72,4 +80,3 @@ Task("build tests") do (ctx):
 	bc.ReferencesSet.Include("build/boobs.compiler.extensions.dll")
 	bc.ReferencesSet.Include("nunit.framework.dll")
 	bc.Execute()
-

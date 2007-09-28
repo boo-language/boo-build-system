@@ -40,6 +40,10 @@ def Mv(source as string, target as string):
 	
 def Rm(filename as string):
 	File.Delete(filename)
+	
+def Rm(dirname as string, pattern as string):
+	for fname in Directory.GetFiles(dirname, pattern):
+		File.Delete(fname)
 
 def MkDir(path as string):
 	Directory.CreateDirectory(path)
