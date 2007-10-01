@@ -17,6 +17,7 @@ import System.Reflection
 
 import Boo.Lang.Useful.CommandLine
 
+import Boobs.Engine
 import Boobs.Engine.Builder
 
 class Program:
@@ -69,7 +70,11 @@ class Program:
 				builder = BoobsEngineBuilder(f)
 				engine = builder.Build()
 				if engine:
-					engine.RunTask += {taskName as string | print "${taskName}:\n"}
+					engine.RunTask += do(task as Task):
+						if task.Description.Length: 
+							print "${task.Description}:\n"
+						else:
+							print "${task.Name}:\n"
 					
 					if _cmdLine.Target:
 						engine.Execute(_cmdLine.Target)
@@ -92,6 +97,3 @@ class Program:
 [STAThread]
 def Main(argv as (string)):
 	return Program().Main(argv)
-
-
-

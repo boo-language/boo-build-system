@@ -11,27 +11,25 @@ Task("default", ["build"])
 
 Task("clean", ["remove build dir", "build"])
 
+Task("build", ["init build dir", "build boobs", "build examples", "build tests"])
+
 Task("remove build dir") do:
 	if Exist("build"): RmDir("build", true)
 
-Task("build", ["init build dir", "build boobs", "build examples", "build tests"])
-
 Task("init build dir") do:
 	MkDir("build")
-	Cp(FileSet("lib/*.dll").Files, "build", true)
+	Cp(["lib/*.dll"], "build", true)
 
 Task("build boobs", ["build engine", "build extensions", "build win32 helper"]) do (ctx):
-	bc = Booc(
-		SourcesSet   : FileSet("tools/boobs/**/*.boo"),
-		OutputFile   : "build/boobs.exe"
-		)
-	bc.ReferencesSet.Include("build/boobs.engine.dll")
-	bc.ReferencesSet.Include("build/boo.lang.useful.dll")
-	bc.Execute()
+	Booc(
+		SourcesSet   : ["tools/boobs/**/*.boo"],
+		OutputFile   : "build/boobs.exe",
+		ReferencesSet: ["build/boobs.engine.dll", "build/boo.lang.useful.dll"]
+		).Execute()
 
 Task("build engine") do (ctx):
 	Booc(
-		SourcesSet  : FileSet("src/boobs.engine/**/*.boo"),
+		SourcesSet  : ["src/boobs.engine/**/*.boo"],
 		OutputFile  : "build/boobs.engine.dll",
 		OutputTarget: TargetType.Library 
 		).Execute()
@@ -40,43 +38,42 @@ Task("build extensions", ["build io.extensions", "build compiler.extensions"])
 
 Task("build io.extensions") do (ctx):
 	Booc(
-		SourcesSet  : FileSet("src/extensions/boobs.io.extensions/**/*.boo"),
+		SourcesSet  : ["src/extensions/boobs.io.extensions/**/*.boo"],
 		OutputFile  : "build/boobs.io.extensions.dll",
 		OutputTarget: TargetType.Library 
 		).Execute()
 
 Task("build compiler.extensions") do (ctx):
-	bc = Booc(
-		SourcesSet   : FileSet("src/extensions/boobs.compiler.extensions/**/*.boo"),
+	Booc(
+		SourcesSet   : ["src/extensions/boobs.compiler.extensions/**/*.boo"],
 		OutputFile   : "build/boobs.compiler.extensions.dll",
-		OutputTarget : TargetType.Library 
-		)
-	bc.ReferencesSet.Include("build/boobs.io.extensions.dll")
-	bc.ReferencesSet.Include("lib/boo.lang.useful.dll")
-	bc.Execute()
+		ReferencesSet: ["build/boobs.io.extensions.dll", "lib/boo.lang.useful.dll"],
+		OutputTarget : TargetType.Library
+		).Execute()
 
 Task("build win32 helper") do:
 	Booc(
-		SourcesSet  : FileSet("src/boobs.win32.helper/**/*.boo"),
+		SourcesSet  : ["src/boobs.win32.helper/**/*.boo"],
 		OutputFile  : "build/boobs.win32.helper.dll",
 		OutputTarget: TargetType.Library 
 		).Execute()
 
 Task("build examples") do (ctx):
-	bc = Booc(
-		SourcesSet   : FileSet("src/boobs.example/**/*.boo"),
-		OutputFile   : "build/boobs.example.exe"
-		)
-	bc.ReferencesSet.Include("build/boobs.engine.dll")
-	bc.Execute()
+	Booc(
+		SourcesSet   : ["src/boobs.example/**/*.boo"],
+		OutputFile   : "build/boobs.example.exe",
+		ReferencesSet: ["build/boobs.engine.dll"]
+		).Execute()
 
 Task("build tests") do (ctx):
-	bc = Booc(
-		SourcesSet   : FileSet("src/boobs.tests/**/*.boo"),
+	pass
+/*
+	Booc(
+		SourcesSet   : ["src/boobs.tests/**/*.boo"],
 		OutputFile   : "build/boobs.tests.dll",
-		OutputTarget : TargetType.Library 
-		)
-	bc.ReferencesSet.Include("build/boobs.io.extensions.dll")
-	bc.ReferencesSet.Include("build/boobs.compiler.extensions.dll")
-	bc.ReferencesSet.Include("nunit.framework.dll")
-	bc.Execute()
+		OutputTarget : TargetType.Library,
+		ReferencesSet: ["build/boobs.io.extensions.dll", 
+						"build/boobs.compiler.extensions.dll",
+						"nunit.framework.dll"]
+		).Execute()
+*/

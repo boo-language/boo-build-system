@@ -25,11 +25,19 @@ class DependencyGraphExecutor:
 		_target = target
 
 	def Execute():
+		t, h = PrepareToRun()
+		ExecuteTask(t, h)
+		
+	private def PrepareToRun():
 		h = BuildTasksHash()
 		t = h[_target] as Task
 		raise TargetNotFoundException(_target) unless t
-		ExecuteTask(t, h)
+		return t, h
 		
+	def Analize(block as callable(Task, Hash)):
+		t, h = PrepareToRun()
+		block(t, h)
+
 	private def BuildTasksHash():
 		temp = {}
 		for t as Task in _tasks:
@@ -39,7 +47,7 @@ class DependencyGraphExecutor:
 
 	private def ExecuteTask(t as Task, h as Hash):
 		return if not t or t.Executed 
-		RunTask(t.Name)
+		RunTask(t)
 		
 		for childName as string in t.Dependencies:
 			ExecuteTask(h[childName] as Task, h) 
