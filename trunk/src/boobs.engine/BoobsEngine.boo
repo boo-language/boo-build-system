@@ -26,10 +26,12 @@ class BoobsEngine:
 		
 	def Execute():
 		UnifyTasks()
+		ValidateGraph()
 		ExecuteDependencyGraph()
 		
 	def Execute(target as string):
 		UnifyTasks()
+		ValidateGraph(target)
 		ExecuteDependencyGraph(target)
 
 	def AddTask(name as string, dependencies as List):
@@ -70,12 +72,27 @@ class BoobsEngine:
 			
 		_tasks = List(temp.Values)
 		
+	protected def ValidateGraph():
+		ValidateGraph("default")
+		
+	protected def ValidateGraph(target as string):				
+		dgx = DependencyGraphExecutor(_tasks, target)
+		dgx.Analize(ExistTask)
+
+	protected def ExistTask(task as Task, hash as Hash):
+		if not task: raise TargetNotFoundException(task.Name)
+
+		for childName in task.Dependencies:
+			if not hash.Contains(childName): 
+				raise DependencyNotFoundException(task.Name)
+			ExistTask(hash[childName], hash)
+		
 	protected def ExecuteDependencyGraph():
 		ExecuteDependencyGraph("default")
 		
 	protected def ExecuteDependencyGraph(target as string):
 		dgx = DependencyGraphExecutor(_tasks, target)
-		dgx.RunTask += { taskName as string | RunTask(taskName) }
+		dgx.RunTask += { task as Task | RunTask(task) }
 		dgx.Execute()
 
 

@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="BoobsEngine.boo" />
     <Compile Include="AssemblyInfo.boo" />
+    <Compile Include="DependencyNotFoundException.boo" />
     <Compile Include="Context.boo" />
     <Compile Include="RunTaskHandler.boo" />
     <Compile Include="Task.boo" />

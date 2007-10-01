@@ -105,14 +105,20 @@ class FileSet:
 		_baseDirectory = DirectoryInfo(_baseDirectory).FullName
 		for glob in globs:
 			Include(glob)
-		
+			
+	static def op_Implicit(patterns as Boo.Lang.List) as FileSet:
+		fs = FileSet()
+		for pattern in patterns:
+			fs.Include(pattern)
+		return fs
+
 	def Include(pattern as string):
 		AddRegEx(pattern,_includes)
 		return self
 		
 	def Exclude(pattern as string):
 		AddRegEx(pattern,_excludes)
-		return self
+		return self				
 	
 	protected def AddRegEx(pattern as string, list as IList): 
 		cleanPattern = CleanPattern(pattern)

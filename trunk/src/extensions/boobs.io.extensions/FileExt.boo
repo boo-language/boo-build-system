@@ -25,13 +25,13 @@ def Cp(source as string, target as string):
 def Cp(source as string, target as string, overwrite as bool):
 	File.Copy(source, target, overwrite)
 
-def Cp(sources as List of string, targetDir as string):
-	for source in sources:
+def Cp(sources as FileSet, targetDir as string):
+	for source in sources.Files:
 		target = Path.Combine(targetDir, Path.GetFileName(source))
 		File.Copy(source, target)
 
-def Cp(sources as List of string, targetDir as string, overwrite as bool):
-	for source in sources:
+def Cp(sources as FileSet, targetDir as string, overwrite as bool):
+	for source in sources.Files:
 		target = Path.Combine(targetDir, Path.GetFileName(source))
 		File.Copy(source, target, overwrite)
 
@@ -43,6 +43,10 @@ def Rm(filename as string):
 	
 def Rm(dirname as string, pattern as string):
 	for fname in Directory.GetFiles(dirname, pattern):
+		File.Delete(fname)
+
+def Rm(sources as FileSet):
+	for fname in sources.Files:
 		File.Delete(fname)
 
 def MkDir(path as string):
@@ -60,15 +64,11 @@ def IsUpToDate(target as string, source as string):
 
 	targetInfo = FileInfo(target)
 	sourceInfo = FileInfo(source)
-		
+
 	return targetInfo.LastAccessTimeUtc >= sourceInfo.LastAccessTimeUtc
 
-def IsUpToDate(target as string, sources as List of string):
-	for source in sources:
+def IsUpToDate(target as string, sources as FileSet):
+	for source in sources.Files:
 		if not IsUpToDate(target, source): return false
 	
 	return true
-
-
-
-

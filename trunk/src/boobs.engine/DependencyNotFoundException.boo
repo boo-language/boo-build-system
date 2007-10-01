@@ -8,20 +8,18 @@
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-import System.Reflection
-import System.Runtime.CompilerServices
-import System.Runtime.InteropServices
+namespace Boobs.Engine
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("Boobs Win32 Helper")]
-[assembly: AssemblyDescription("Helpers to access Win32 specifics at the Boobs Engine")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Boobs")]
-[assembly: AssemblyCopyright("Copyright © 2007 Georges Benatti Jr")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+import System
 
-[assembly: AssemblyVersion("0.2.0.0")]
+class DependencyNotFoundException(Exception):
+"""Description of TargetNotFoundException"""
+	def constructor(target as string):
+		super(BuildMessage(target))
+
+	def constructor(target as string, innerException as Exception):
+		super(BuildMessage(target), innerException)
+
+	private def BuildMessage(target as string):
+		return "Could not find dependency: ${target}"
+

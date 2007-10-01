@@ -49,6 +49,12 @@ class ResourcesFileSet(FileSet):
 	def constructor():
 		pass
 		
+	static def op_Implicit(patterns as Boo.Lang.List) as ResourcesFileSet:
+		rfs = ResourcesFileSet()
+		for pattern in patterns:
+			rfs.Include(pattern)
+		return rfs
+
 	def Include(pattern as string, namespacePrefix as string):
 		dummy = []
 		Include(pattern)
