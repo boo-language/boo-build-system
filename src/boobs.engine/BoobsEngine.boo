@@ -84,7 +84,7 @@ class BoobsEngine:
 
 		for childName in task.Dependencies:
 			if not hash.Contains(childName): 
-				raise DependencyNotFoundException(task.Name)
+				raise DependencyNotFoundException(childName)
 			ExistTask(hash[childName], hash)
 		
 	protected def ExecuteDependencyGraph():
