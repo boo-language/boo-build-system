@@ -6,10 +6,12 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Boobs.Compiler.Extensions</RootNamespace>
     <AssemblyName>Boobs.Compiler.Extensions</AssemblyName>
+    <NoStdLib>False</NoStdLib>
+    <Ducky>False</Ducky>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <DebugSymbols>True</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -34,6 +36,7 @@
     <Compile Include="CompilerBase.boo" />
     <Compile Include="CSharpCompiler.boo" />
     <Compile Include="Exec.boo" />
+    <Compile Include="MsBuild.boo" />
     <Compile Include="ResourcesFileSet.boo" />
     <Compile Include="TargetType.boo" />
   </ItemGroup>

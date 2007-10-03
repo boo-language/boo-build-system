@@ -52,6 +52,13 @@ class BoobsEngine:
 	def AddFileTask(name as string, dependencies as List, block as TaskBlock):
 		_tasks.Add(FileTask(name, Description: ConsumeDescription(), Dependencies: dependencies, Block: block))
 
+	def AddSvnTask(name as string, pathToSvn as string, workingCopyPath as string, dependencies as IList, block as TaskBlock):
+		svnTask = SvnTask(name, pathToSvn, workingCopyPath, 
+			Description: ConsumeDescription(), 
+			Dependencies: dependencies,
+			Block: block)
+		_tasks.Add(svnTask)
+
 	def SetDescription(description as string):
 		_description = description
 		
