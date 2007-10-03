@@ -14,6 +14,8 @@ import System
 import Boobs.Engine
 	
 class BoobsBaseScript:
+	static defaultSvnPath = """c:\Program Files\Subversion\bin\svn.exe"""
+
 	[getter(Engine)]
 	_engine = BoobsEngine()
 	
@@ -34,7 +36,36 @@ class BoobsBaseScript:
 
 	def File(name as string, dependencies as List, block as TaskBlock):
 		_engine.AddFileTask(name, dependencies, block)
+		
+	def Svn(name as string, pathToSvn as string, workingCopyPath as string, dependecies as List, block as TaskBlock):
+		_engine.AddSvnTask(name , pathToSvn, workingCopyPath, dependecies, block)
+		
+	def Svn(name as string, pathToSvn as string, workingCopyPath as string, block as TaskBlock):
+		_engine.AddSvnTask(name , pathToSvn, workingCopyPath, [], block)
+ 
+	def Svn(name as string, workingCopyPath as string, dependecies as List, block as TaskBlock):
+		Svn(name, defaultSvnPath, workingCopyPath, dependecies, block)
+
+	def Svn(name as string, workingCopyPath as string, block as TaskBlock):
+		Svn(name, defaultSvnPath, workingCopyPath, [], block)
+
+	def Svn(name as string, dependecies as List, block as TaskBlock):
+		Svn(name, defaultSvnPath, Environment.CurrentDirectory, dependecies, block)
+	
+	def Svn(name as string, block as TaskBlock):
+		Svn(name, [], block)
 
 	def Desc(description as string):
 		_engine.SetDescription(description)
+	
+	def Execute(target as string):
+		_engine.Execute(target)
+	
+	def SvnUpdate(pathToSvn as string, workingCopyPath as string):
+		print SvnHelper.Execute(pathToSvn, "update ${workingCopyPath} --non-interactive")
+ 
+	def SvnUpdate(workingCopyPath as string):
+		SvnUpdate(defaultSvnPath, workingCopyPath)
 
+	def SvnUpdate():
+		SvnUpdate(defaultSvnPath, Environment.CurrentDirectory)

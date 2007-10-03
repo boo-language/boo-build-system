@@ -52,3 +52,12 @@ class Task:
 		
 	virtual def ShouldRun() as bool:
 		return true
+
+	def LogDebug(msg as string):
+		print "Debug ${Name}: ${msg}"
+	
+	def LogWarn(msg as string):
+		print "Warn ${Name}: ${msg}"
+		
+	def LogError(msg as string):
+		print "Error ${Name}: ${msg}"

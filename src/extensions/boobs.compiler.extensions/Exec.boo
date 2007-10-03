@@ -24,13 +24,7 @@ class Exec:
 	_name as string
 	_exePath as string
 	_baseDir as string = Environment.CurrentDirectory
-	
-	BaseDirectory:
-		get:
-			return _baseDir
-		set:
-			OnBaseDirChanged(_baseDir,value)
-			_baseDir = value
+	_cmdLine as string
 	
 	[property(ExitCode)]
 	_exitCode as int = 0
@@ -44,16 +38,25 @@ class Exec:
 	[property(Arguments)]
 	_args = StringCollection()
 	
-	_cmdLine as string
+	[getter(StandardOutput)]
+	_stdOut as StreamReader
+	
+	[getter(StandardError)]
+	_stdErr as StreamReader
+
 	virtual CommandLine as string:
 		get:
 			if not _cmdLine:
 				return join(_args, ' ')
 			return _cmdLine
-	
-	_stdOut as StreamReader
-	_stdErr as StreamReader
 	    
+	BaseDirectory:
+		get:
+			return _baseDir
+		set:
+			OnBaseDirChanged(_baseDir,value)
+			_baseDir = value
+	
 	def constructor(executable as string, commandLine as string):
     	self()
     	_exePath = executable
