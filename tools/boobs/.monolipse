@@ -1,0 +1,12 @@
+<settings>
+  <outputType>exe</outputType>
+  <references>
+    <monolipse.core.internal.LocalAssemblyReference-Remembrance>
+      <path>/boobs/lib/Boo.Lang.Useful.dll</path>
+    </monolipse.core.internal.LocalAssemblyReference-Remembrance>
+    <monolipse.core.internal.AssemblySourceReference-Remembrance>
+      <path>/boobs/src/boobs.engine</path>
+    </monolipse.core.internal.AssemblySourceReference-Remembrance>
+  </references>
+  <outputFolder>/boobs/bin</outputFolder>
+</settings>

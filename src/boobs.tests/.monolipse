@@ -1,0 +1,14 @@
+<settings>
+  <language>boo</language>
+  <outputType>library</outputType>
+  <references>
+    <monolipse.core.internal.AssemblySourceReference-Remembrance>
+      <path>/boobs/src/extensions/boobs.compiler.extensions</path>
+    </monolipse.core.internal.AssemblySourceReference-Remembrance>
+    <monolipse.core.internal.AssemblySourceReference-Remembrance>
+      <path>/boobs/src/extensions/boobs.io.extensions</path>
+    </monolipse.core.internal.AssemblySourceReference-Remembrance>
+  </references>
+  <outputFolder>/boobs/bin</outputFolder>
+  <additionalOptions></additionalOptions>
+</settings>
