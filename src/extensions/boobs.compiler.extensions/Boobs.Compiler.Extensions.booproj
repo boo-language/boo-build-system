@@ -6,12 +6,10 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Boobs.Compiler.Extensions</RootNamespace>
     <AssemblyName>Boobs.Compiler.Extensions</AssemblyName>
-    <NoStdLib>False</NoStdLib>
-    <Ducky>False</Ducky>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>..\..\..\bin\</OutputPath>
-    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -39,6 +37,7 @@
     <Compile Include="MsBuild.boo" />
     <Compile Include="ResourcesFileSet.boo" />
     <Compile Include="TargetType.boo" />
+    <Compile Include="VbNetCompiler.boo" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\boobs.io.extensions\Boobs.IO.Extensions.booproj">

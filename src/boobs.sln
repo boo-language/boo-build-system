@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-# SharpDevelop 2.2.1.2678
+# SharpDevelop 2.2.1.2648
 Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Engine", "boobs.engine\Boobs.Engine.booproj", "{B86E7336-0498-486D-A199-FC19ED9740AF}"
 EndProject
 Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Example", "boobs.example\Boobs.Example.booproj", "{707667FA-CDCB-4756-9EF0-96DB18A53DCD}"
