@@ -85,7 +85,7 @@ class Vbc(CompilerBase):
 		WriteOption("checked") if Checked
 		WriteOption("unsafe") if Unsafe
 		WriteOption("optimize") if Optimize
-		WriteOption("rootnamespace", RootNamespace) if RootNampspace
+		WriteOption("rootnamespace", RootNamespace) if RootNamespace
 		WriteOption("codepage",Codepage) if Codepage
 		Arguments.Add("/noconfig") if NoConfig
 	

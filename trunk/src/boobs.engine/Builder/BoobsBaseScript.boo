@@ -16,6 +16,8 @@ import Boobs.Engine
 class BoobsBaseScript:
 	static defaultSvnPath = """c:\Program Files\Subversion\bin\svn.exe"""
 
+	public Configuration as Boobs.Engine.Configuration
+
 	[getter(Engine)]
 	_engine = BoobsEngine()
 	

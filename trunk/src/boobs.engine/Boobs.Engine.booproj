@@ -37,6 +37,7 @@
     <Compile Include="BoobsEngine.boo" />
     <Compile Include="AssemblyInfo.boo" />
     <Compile Include="CircularDependencyException.boo" />
+    <Compile Include="Configuration.boo" />
     <Compile Include="Context.boo" />
     <Compile Include="DependencyNotFoundException.boo" />
     <Compile Include="RunTaskHandler.boo" />

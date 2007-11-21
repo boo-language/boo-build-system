@@ -33,7 +33,8 @@ print "Running ${filename}"
 
 using f = File.OpenText(filename):
 	builder = BoobsEngineBuilder(f)
-	engine = builder.Build()
+	options = {}
+	engine = builder.Build(options)
 	if engine:
 		engine.Execute()
 	else:

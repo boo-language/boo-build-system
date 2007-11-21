@@ -68,7 +68,7 @@ class Program:
 		try:
 			using f = File.OpenText(filename):
 				builder = BoobsEngineBuilder(f)
-				engine = builder.Build()
+				engine = builder.Build(_cmdLine.Options)
 				if engine:
 					engine.RunTask += do(task as Task):
 						if task.Description.Length: 

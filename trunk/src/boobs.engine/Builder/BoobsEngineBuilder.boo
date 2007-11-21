@@ -11,6 +11,7 @@
 namespace Boobs.Engine.Builder
 
 import System
+import System.Collections
 import System.IO
 import System.Reflection
 
@@ -35,9 +36,10 @@ class BoobsEngineBuilder:
 	def constructor(reader as StreamReader):
 		_reader = reader
 		
-	def Build() as BoobsEngine:
+	def Build(options as IDictionary) as BoobsEngine:
 		if BuildAndRunLoader():
 			baseObj = cast(BoobsBaseScript, _genObj)
+			baseObj.Configuration = Boobs.Engine.Configuration(options)
 			return baseObj.Engine
 		else:
 			return null
