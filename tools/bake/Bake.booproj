@@ -1,0 +1,53 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Bake</RootNamespace>
+    <AssemblyName>Bake</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}</ProjectGuid>
+    <NoStdLib>False</NoStdLib>
+    <Ducky>False</Ducky>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>obj\Debug\</IntermediateOutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>obj\Release\</IntermediateOutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BakeCommandLine.boo" />
+    <Compile Include="Program.boo" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\bake.engine\Bake.Engine.booproj">
+      <Project>{B86E7336-0498-486D-A199-FC19ED9740AF}</Project>
+      <Name>Bake.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\extensions\bake.compiler.extensions\Bake.Compiler.Extensions.booproj">
+      <Project>{BA5A9FD1-0711-432C-830C-5CE35CDE3570}</Project>
+      <Name>Bake.Compiler.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\extensions\bake.io.extensions\Bake.IO.Extensions.booproj">
+      <Project>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</Project>
+      <Name>Bake.IO.Extensions</Name>
+    </ProjectReference>
+    <Reference Include="Boo.Lang.Useful">
+      <HintPath>..\..\lib\Boo.Lang.Useful.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
+</Project>
