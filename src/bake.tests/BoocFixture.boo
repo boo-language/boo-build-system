@@ -1,10 +1,10 @@
-namespace Boobs.Tests
+namespace Bake.Tests
 
 import System
 
 import NUnit.Framework
-import Boobs.Compiler.Extensions
-import Boobs.IO.Extensions
+import Bake.Compiler.Extensions
+import Bake.IO.Extensions
 
 [TestFixture]
 class BoocFixture:

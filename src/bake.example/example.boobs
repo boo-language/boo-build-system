@@ -1,4 +1,4 @@
-import Boobs.IO.Extensions
+import Bake.IO.Extensions
 
 Task("default", ["test"])
 

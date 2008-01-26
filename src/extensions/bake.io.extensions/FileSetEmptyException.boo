@@ -1,4 +1,4 @@
-namespace Boobs.IO.Extensions
+namespace Bake.IO.Extensions
 
 import System
 

@@ -11,7 +11,7 @@
 #############################################################################
 # Based on Class FileSet from NUncle by "Ayende Rahien"
 
-namespace Boobs.IO.Extensions
+namespace Bake.IO.Extensions
 
 import System
 import System.IO     

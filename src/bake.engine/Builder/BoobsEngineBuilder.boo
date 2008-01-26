@@ -8,7 +8,7 @@
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Boobs.Engine.Builder
+namespace Bake.Engine.Builder
 
 import System
 import System.Collections
@@ -17,11 +17,11 @@ import System.Reflection
 
 import Boo.Lang.Compiler
 
-import Boobs.Engine
-import Boobs.Engine.Runner
+import Bake.Engine
+import Bake.Engine.Runner
 
-class BoobsEngineBuilder:
-"""Description of BoobsEngineBuilder"""
+class BakeEngineBuilder:
+"""Description of BakeEngineBuilder"""
 	_reader as StreamReader
 	_loader as ScriptLoader
 	_genObj as duck
@@ -36,10 +36,10 @@ class BoobsEngineBuilder:
 	def constructor(reader as StreamReader):
 		_reader = reader
 		
-	def Build(options as IDictionary) as BoobsEngine:
+	def Build(options as IDictionary) as BakeEngine:
 		if BuildAndRunLoader():
-			baseObj = cast(BoobsBaseScript, _genObj)
-			baseObj.Configuration = Boobs.Engine.Configuration(options)
+			baseObj = cast(BakeBaseScript, _genObj)
+			baseObj.Configuration = Bake.Engine.Configuration(options)
 			return baseObj.Engine
 		else:
 			return null
@@ -52,14 +52,14 @@ class BoobsEngineBuilder:
 	protected def BuildLoader():
 		try:
 			_loader = ScriptLoader()
-			_loader.BaseTypeName = "Boobs.Engine.Builder.BoobsBaseScript"
+			_loader.BaseTypeName = "Bake.Engine.Builder.BakeBaseScript"
 			AddReferences()
 			return _loader.Load(_reader)
 		except x:
-			raise LoadBoobsScriptException("Load BoobsScript Error", x)
+			raise LoadBakeScriptException("Load BakeScript Error", x)
 
 	protected def AddReferences():
-		_loader.References.Add(typeof(BoobsBaseScript).Assembly)
+		_loader.References.Add(typeof(BakeBaseScript).Assembly)
 		for reference as Assembly in _references:
 			_loader.References.Add(reference)
 			
@@ -70,4 +70,4 @@ class BoobsEngineBuilder:
 			_genObj.Execute()
 			return true
 		except x:
-			raise CompileBoobsScriptException("Compile BoobsScript Error", x)
+			raise CompileBakeScriptException("Compile BakeScript Error", x)

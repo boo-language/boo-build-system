@@ -2,11 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 # SharpDevelop 2.2.1.2648
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Engine", "bake.engine\Boobs.Engine.booproj", "{B86E7336-0498-486D-A199-FC19ED9740AF}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake.Engine", "bake.engine\Bake.Engine.booproj", "{B86E7336-0498-486D-A199-FC19ED9740AF}"
 EndProject
 Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake.Example", "bake.example\Bake.Example.booproj", "{707667FA-CDCB-4756-9EF0-96DB18A53DCD}"
 EndProject
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake", "..\tools\boobs\Bake.booproj", "{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake", "..\tools\bake\Bake.booproj", "{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}"
 EndProject
 Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake.IO.Extensions", "extensions\bake.io.extensions\Bake.IO.Extensions.booproj", "{CA3F1436-9E06-410B-8C08-0E27B0DF652F}"
 EndProject
@@ -16,10 +16,10 @@ Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake.Compiler.Extensions", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50C963BA-D4F4-47CD-8FA4-0FCAC9068471}"
 	ProjectSection(SolutionItems) = postProject
-		..\boobsfile = ..\boobsfile
+		..\bakefile = ..\bakefile
 	EndProjectSection
 EndProject
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Win32.Helper", "boobs.win32.helper\Boobs.Win32.Helper.booproj", "{B1903AC4-2C7D-4913-BF30-F2338B894DB3}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake.Win32.Helper", "bake.win32.helper\Bake.Win32.Helper.booproj", "{B1903AC4-2C7D-4913-BF30-F2338B894DB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

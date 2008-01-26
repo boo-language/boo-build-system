@@ -35,9 +35,9 @@
     <Compile Include="FileSystemHelper.boo" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\boobs.engine\Boobs.Engine.booproj">
+    <ProjectReference Include="..\..\bake.engine\Bake.Engine.booproj">
       <Project>{B86E7336-0498-486D-A199-FC19ED9740AF}</Project>
-      <Name>Boobs.Engine</Name>
+      <Name>Bake.Engine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />

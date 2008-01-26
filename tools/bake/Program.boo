@@ -8,7 +8,7 @@
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Boobs
+namespace Bake
 
 import System
 import System.Collections
@@ -17,12 +17,12 @@ import System.Reflection
 
 import Boo.Lang.Useful.CommandLine
 
-import Boobs.Engine
-import Boobs.Engine.Builder
+import Bake.Engine
+import Bake.Engine.Builder
 
 class Program:
 	
-	_cmdLine = BoobsCommandLine()
+	_cmdLine = BakeCommandLine()
 
 	def PrintGreetings():
 		print "Boo Build System - version 0.2\n"
@@ -41,10 +41,10 @@ class Program:
 		return true
 
 	def Usage():
-		print "Usage: Boobs [options]"
+		print "Usage: Bake [options]"
 		print "Options: "
 		_cmdLine.PrintOptions()
-		print "\nThe file 'boobsfile' will be used if no buildfile is specified.\n"
+		print "\nThe file 'Bakefile' will be used if no buildfile is specified.\n"
 
 	def Process():
 		filename = GetFileName()
@@ -61,13 +61,13 @@ class Program:
 		if _cmdLine.File:
 			filename = Path.Combine(Environment.CurrentDirectory, _cmdLine.File)
 		else:
-			filename = Path.Combine(Environment.CurrentDirectory, "boobsfile")
+			filename = Path.Combine(Environment.CurrentDirectory, "Bakefile")
 		return filename		
 
 	def ExecuteScript(filename as string):
 		try:
 			using f = File.OpenText(filename):
-				builder = BoobsEngineBuilder(f)
+				builder = BakeEngineBuilder(f)
 				engine = builder.Build(_cmdLine.Options)
 				if engine:
 					engine.RunTask += do(task as Task):

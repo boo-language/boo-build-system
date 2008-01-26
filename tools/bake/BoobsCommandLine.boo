@@ -1,11 +1,11 @@
-namespace Boobs
+namespace Bake
 
 import System
 
 import Boo.Lang.Useful.CommandLine
 
-class BoobsCommandLine(AbstractCommandLine):
-"""Description of BoobsCommandLine"""
+class BakeCommandLine(AbstractCommandLine):
+"""Description of BakeCommandLine"""
 
 	[Option("Use given buildfile", LongForm: "file", ShortForm: "f")]
 	public File as string

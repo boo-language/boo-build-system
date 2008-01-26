@@ -31,11 +31,13 @@
     <Compile Include="Program.boo" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\boobs.engine\Boobs.Engine.booproj">
-      <Project>{B86E7336-0498-486D-A199-FC19ED9740AF}</Project>
-      <Name>Boobs.Engine</Name>
-    </ProjectReference>
     <Content Include="example.boobs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bake.engine\Bake.Engine.booproj">
+      <Project>{B86E7336-0498-486D-A199-FC19ED9740AF}</Project>
+      <Name>Bake.Engine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
 </Project>

@@ -11,14 +11,14 @@
 #############################################################################
 # Based on Class from NUncle by "Ayende Rahien"
 
-namespace Boobs.Compiler.Extensions
+namespace Bake.Compiler.Extensions
 
 import System
 import System.IO
 import System.Collections
 import System.Collections.Specialized
 
-import Boobs.IO.Extensions
+import Bake.IO.Extensions
 
 abstract class CompilerBase(BuildBase):
 	

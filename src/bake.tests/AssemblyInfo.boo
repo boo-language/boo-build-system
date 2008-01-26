@@ -5,11 +5,11 @@ import System.Runtime.InteropServices
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Boobs.Tests")]
+[assembly: AssemblyTitle("Bake.Tests")]
 [assembly: AssemblyDescription("Unit tests for the Boo Build System")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Boobs.Tests")]
+[assembly: AssemblyProduct("Bake.Tests")]
 [assembly: AssemblyCopyright("Copyright © 2007 Georges Benatti Jr")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
