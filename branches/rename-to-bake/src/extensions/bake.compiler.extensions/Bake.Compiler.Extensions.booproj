@@ -4,8 +4,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>Boobs.Compiler.Extensions</RootNamespace>
-    <AssemblyName>Boobs.Compiler.Extensions</AssemblyName>
+    <RootNamespace>Bake.Compiler.Extensions</RootNamespace>
+    <AssemblyName>Bake.Compiler.Extensions</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -18,7 +18,10 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Boo.Lang.Useful" />
+    <Reference Include="Boo.Lang.Useful">
+      <HintPath>..\..\..\lib\Boo.Lang.Useful.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />

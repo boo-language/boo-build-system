@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>Boobs.Tests</RootNamespace>
+    <RootNamespace>Bake.Tests</RootNamespace>
     <AssemblyName>Bake.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -18,7 +18,10 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Boo.Lang.Useful" />
+    <Reference Include="Boo.Lang.Useful">
+      <HintPath>..\..\lib\Boo.Lang.Useful.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\..\Arquivos de programas\NUnit 2.4.1\bin\nunit.framework.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>

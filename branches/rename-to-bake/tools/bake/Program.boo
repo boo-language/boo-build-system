@@ -44,7 +44,7 @@ class Program:
 		print "Usage: Bake [options]"
 		print "Options: "
 		_cmdLine.PrintOptions()
-		print "\nThe file 'Bakefile' will be used if no buildfile is specified.\n"
+		print "\nThe file 'build.bake' will be used if no buildfile is specified.\n"
 
 	def Process():
 		filename = GetFileName()
@@ -61,7 +61,7 @@ class Program:
 		if _cmdLine.File:
 			filename = Path.Combine(Environment.CurrentDirectory, _cmdLine.File)
 		else:
-			filename = Path.Combine(Environment.CurrentDirectory, "Bakefile")
+			filename = Path.Combine(Environment.CurrentDirectory, "build.bake")
 		return filename		
 
 	def ExecuteScript(filename as string):
