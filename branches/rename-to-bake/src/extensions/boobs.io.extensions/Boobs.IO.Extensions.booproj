@@ -1,0 +1,44 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Boobs.IO.Extensions</RootNamespace>
+    <AssemblyName>Boobs.IO.Extensions</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</ProjectGuid>
+    <NoStdLib>False</NoStdLib>
+    <Ducky>False</Ducky>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>obj\Debug\</IntermediateOutputPath>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>obj\Release\</IntermediateOutputPath>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FileExt.boo" />
+    <Compile Include="AssemblyInfo.boo" />
+    <Compile Include="FileSet.boo" />
+    <Compile Include="FileSetEmptyException.boo" />
+    <Compile Include="FileSystemHelper.boo" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\boobs.engine\Boobs.Engine.booproj">
+      <Project>{B86E7336-0498-486D-A199-FC19ED9740AF}</Project>
+      <Name>Boobs.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
+</Project>

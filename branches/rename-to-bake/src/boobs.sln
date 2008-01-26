@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+# SharpDevelop 2.2.1.2648
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Engine", "boobs.engine\Boobs.Engine.booproj", "{B86E7336-0498-486D-A199-FC19ED9740AF}"
+EndProject
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Example", "boobs.example\Boobs.Example.booproj", "{707667FA-CDCB-4756-9EF0-96DB18A53DCD}"
+EndProject
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs", "..\tools\boobs\Boobs.booproj", "{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}"
+EndProject
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.IO.Extensions", "extensions\boobs.io.extensions\Boobs.IO.Extensions.booproj", "{CA3F1436-9E06-410B-8C08-0E27B0DF652F}"
+EndProject
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Tests", "boobs.tests\Boobs.Tests.booproj", "{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}"
+EndProject
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Compiler.Extensions", "extensions\boobs.compiler.extensions\Boobs.Compiler.Extensions.booproj", "{BA5A9FD1-0711-432C-830C-5CE35CDE3570}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50C963BA-D4F4-47CD-8FA4-0FCAC9068471}"
+	ProjectSection(SolutionItems) = postProject
+		..\boobsfile = ..\boobsfile
+	EndProjectSection
+EndProject
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Win32.Helper", "boobs.win32.helper\Boobs.Win32.Helper.booproj", "{B1903AC4-2C7D-4913-BF30-F2338B894DB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B86E7336-0498-486D-A199-FC19ED9740AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86E7336-0498-486D-A199-FC19ED9740AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86E7336-0498-486D-A199-FC19ED9740AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86E7336-0498-486D-A199-FC19ED9740AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707667FA-CDCB-4756-9EF0-96DB18A53DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707667FA-CDCB-4756-9EF0-96DB18A53DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707667FA-CDCB-4756-9EF0-96DB18A53DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707667FA-CDCB-4756-9EF0-96DB18A53DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95245175-C58A-4439-A001-4EBD05145B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95245175-C58A-4439-A001-4EBD05145B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95245175-C58A-4439-A001-4EBD05145B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95245175-C58A-4439-A001-4EBD05145B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3F1436-9E06-410B-8C08-0E27B0DF652F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3F1436-9E06-410B-8C08-0E27B0DF652F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3F1436-9E06-410B-8C08-0E27B0DF652F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA3F1436-9E06-410B-8C08-0E27B0DF652F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5A9FD1-0711-432C-830C-5CE35CDE3570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5A9FD1-0711-432C-830C-5CE35CDE3570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5A9FD1-0711-432C-830C-5CE35CDE3570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5A9FD1-0711-432C-830C-5CE35CDE3570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1903AC4-2C7D-4913-BF30-F2338B894DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1903AC4-2C7D-4913-BF30-F2338B894DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1903AC4-2C7D-4913-BF30-F2338B894DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1903AC4-2C7D-4913-BF30-F2338B894DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
