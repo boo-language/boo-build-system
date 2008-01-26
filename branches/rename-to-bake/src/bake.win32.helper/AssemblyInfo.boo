@@ -15,11 +15,11 @@ import System.Runtime.InteropServices
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Boobs Win32 Helper")]
-[assembly: AssemblyDescription("Helpers to access Win32 specifics at the Boobs Engine")]
+[assembly: AssemblyTitle("Bake Win32 Helper")]
+[assembly: AssemblyDescription("Helpers to access Win32 specifics at the Bake Engine")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Boobs")]
+[assembly: AssemblyProduct("Bake")]
 [assembly: AssemblyCopyright("Copyright © 2007 Georges Benatti Jr")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

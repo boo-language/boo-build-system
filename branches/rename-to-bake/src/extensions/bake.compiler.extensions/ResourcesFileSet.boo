@@ -11,7 +11,7 @@
 #############################################################################
 # Based on Class from NUncle by "Ayende Rahien"
 
-namespace Boobs.Compiler.Extensions
+namespace Bake.Compiler.Extensions
 
 import System
 import System.IO
@@ -19,7 +19,7 @@ import System.Globalization
 import System.Collections
 import System.Text.RegularExpressions
 
-import Boobs.IO.Extensions
+import Bake.IO.Extensions
 
 # This allows us to get the namespace for each resource
 # if no namespace was defined, then we use the matching source file's 

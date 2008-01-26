@@ -1,4 +1,4 @@
-namespace Boobs.Tests
+namespace Bake.Tests
 
 import System
 

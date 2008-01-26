@@ -35,13 +35,17 @@
     <Compile Include="Program.boo" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\boobs.engine\Boobs.Engine.booproj">
+    <ProjectReference Include="..\..\src\bake.engine\Bake.Engine.booproj">
       <Project>{B86E7336-0498-486D-A199-FC19ED9740AF}</Project>
-      <Name>Boobs.Engine</Name>
+      <Name>Bake.Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\extensions\boobs.compiler.extensions\Boobs.Compiler.Extensions.booproj">
+    <ProjectReference Include="..\..\src\extensions\bake.compiler.extensions\Bake.Compiler.Extensions.booproj">
       <Project>{BA5A9FD1-0711-432C-830C-5CE35CDE3570}</Project>
-      <Name>Boobs.Compiler.Extensions</Name>
+      <Name>Bake.Compiler.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\extensions\bake.io.extensions\Bake.IO.Extensions.booproj">
+      <Project>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</Project>
+      <Name>Bake.IO.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />

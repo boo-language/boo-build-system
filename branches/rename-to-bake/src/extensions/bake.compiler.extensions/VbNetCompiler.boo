@@ -11,7 +11,7 @@
 #############################################################################
 # Based on Class from NUncle by "Ayende Rahien"
 
-namespace Boobs.Compiler.Extensions
+namespace Bake.Compiler.Extensions
 
 import System
 import System.IO
@@ -133,6 +133,6 @@ class VbCompilerFinder:
 		return null
 		
 	private def FindInFramework():
-		asm = Assembly.Load("Boobs.Win32.Helper")
-		fit as duck = asm.GetType("Boobs.Win32.Helper.FrameworkInformation")
+		asm = Assembly.Load("Bake.Win32.Helper")
+		fit as duck = asm.GetType("Bake.Win32.Helper.FrameworkInformation")
 		return Path.Combine(fit.Actual.FullPath, "vbc.exe")

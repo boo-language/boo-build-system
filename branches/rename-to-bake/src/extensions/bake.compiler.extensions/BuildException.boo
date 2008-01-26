@@ -11,7 +11,7 @@
 #############################################################################
 # Based on Class from NUncle by "Ayende Rahien"
 
-namespace Boobs.Compiler.Extensions
+namespace Bake.Compiler.Extensions
 
 import System
 

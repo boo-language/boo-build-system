@@ -40,9 +40,9 @@
     <Compile Include="VbNetCompiler.boo" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\boobs.io.extensions\Boobs.IO.Extensions.booproj">
+    <ProjectReference Include="..\bake.io.extensions\Bake.IO.Extensions.booproj">
       <Project>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</Project>
-      <Name>Boobs.IO.Extensions</Name>
+      <Name>Bake.IO.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />

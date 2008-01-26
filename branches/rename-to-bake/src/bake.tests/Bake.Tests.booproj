@@ -33,13 +33,13 @@
     <None Include="todo.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\extensions\boobs.compiler.extensions\Boobs.Compiler.Extensions.booproj">
+    <ProjectReference Include="..\extensions\bake.compiler.extensions\Bake.Compiler.Extensions.booproj">
       <Project>{BA5A9FD1-0711-432C-830C-5CE35CDE3570}</Project>
-      <Name>Boobs.Compiler.Extensions</Name>
+      <Name>Bake.Compiler.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\extensions\boobs.io.extensions\Boobs.IO.Extensions.booproj">
+    <ProjectReference Include="..\extensions\bake.io.extensions\Bake.IO.Extensions.booproj">
       <Project>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</Project>
-      <Name>Boobs.IO.Extensions</Name>
+      <Name>Bake.IO.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />

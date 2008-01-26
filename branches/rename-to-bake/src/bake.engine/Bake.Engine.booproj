@@ -1,8 +1,8 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <RootNamespace>Boobs.Engine</RootNamespace>
-    <AssemblyName>Boobs.Engine</AssemblyName>
+    <RootNamespace>Bake.Engine</RootNamespace>
+    <AssemblyName>Bake.Engine</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B86E7336-0498-486D-A199-FC19ED9740AF}</ProjectGuid>

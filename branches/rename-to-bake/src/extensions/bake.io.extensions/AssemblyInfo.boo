@@ -17,11 +17,11 @@ import System.Runtime.CompilerServices
 // change them to the information which is associated with the assembly
 // you compile.
 
-[assembly: AssemblyTitle('Boobs IO Extensions')]
-[assembly: AssemblyDescription('Extensions to the Boobs Engine that provide easier methods for IO')]
+[assembly: AssemblyTitle('Bake IO Extensions')]
+[assembly: AssemblyDescription('Extensions to the Bake Engine that provide easier methods for IO')]
 [assembly: AssemblyConfiguration('')]
 [assembly: AssemblyCompany('')]
-[assembly: AssemblyProduct('Boobs')]
+[assembly: AssemblyProduct('Bake')]
 [assembly: AssemblyCopyright('Copyright © 2007 Georges Benatti Jr')]
 [assembly: AssemblyTrademark('')]
 [assembly: AssemblyCulture('')]
