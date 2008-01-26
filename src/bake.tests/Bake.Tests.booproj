@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>Boobs.Tests</RootNamespace>
-    <AssemblyName>Boobs.Tests</AssemblyName>
+    <AssemblyName>Bake.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>

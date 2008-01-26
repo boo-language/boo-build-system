@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <RootNamespace>Boobs.IO.Extensions</RootNamespace>
-    <AssemblyName>Boobs.IO.Extensions</AssemblyName>
+    <AssemblyName>Bake.IO.Extensions</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</ProjectGuid>
