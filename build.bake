@@ -1,4 +1,4 @@
-import Bake.Engine
+#import Bake.Engine
 import Bake.Compiler.Extensions
 import Bake.IO.Extensions
 
@@ -7,43 +7,43 @@ import System.Collections.Generic
 ############################
 # Tasks
 
-Task("default", ["build"])
+Task "default", ["build"]
 
-Task("clean", ["remove build dir", "build"])
+Task "clean", ["remove build dir", "build"]
 
-Task("build", ["init build dir", "build Bake", "build examples", "build tests"])
+Task "build", ["init build dir", "build Bake", "build examples", "build tests"]
 
-Task("remove build dir") do:
-	if Exist("build"): RmDir("build", true)
+Task "remove build dir":
+	RmDir("build", true) if Exist("build")
 
-Task("init build dir") do:
+Task "init build dir":
 	MkDir("build")
 	Cp(["lib/*.dll"], "build", true)
 
-Task("build Bake", ["build engine", "build extensions", "build win32 helper"]) do (ctx):
+Task "build Bake", ["build engine", "build extensions", "build win32 helper"]:
 	Booc(
 		SourcesSet   : ["tools/Bake/**/*.boo"],
 		OutputFile   : "build/Bake.exe",
 		ReferencesSet: ["build/Bake.engine.dll", "build/boo.lang.useful.dll"]
 		).Execute()
 
-Task("build engine") do (ctx):
+Task "build engine":
 	Booc(
 		SourcesSet  : ["src/Bake.engine/**/*.boo"],
 		OutputFile  : "build/Bake.engine.dll",
 		OutputTarget: TargetType.Library 
 		).Execute()
 
-Task("build extensions", ["build io.extensions", "build compiler.extensions"])
+Task "build extensions", ["build io.extensions", "build compiler.extensions"]
 
-Task("build io.extensions") do (ctx):
+Task "build io.extensions":
 	Booc(
 		SourcesSet  : ["src/extensions/Bake.io.extensions/**/*.boo"],
 		OutputFile  : "build/Bake.io.extensions.dll",
 		OutputTarget: TargetType.Library 
 		).Execute()
 
-Task("build compiler.extensions") do (ctx):
+Task "build compiler.extensions":
 	Booc(
 		SourcesSet   : ["src/extensions/Bake.compiler.extensions/**/*.boo"],
 		OutputFile   : "build/Bake.compiler.extensions.dll",
@@ -51,23 +51,21 @@ Task("build compiler.extensions") do (ctx):
 		OutputTarget : TargetType.Library
 		).Execute()
 
-Task("build win32 helper") do:
+Task "build win32 helper":
 	Booc(
 		SourcesSet  : ["src/Bake.win32.helper/**/*.boo"],
 		OutputFile  : "build/Bake.win32.helper.dll",
 		OutputTarget: TargetType.Library 
 		).Execute()
 
-Task("build examples") do (ctx):
+Task "build examples":
 	Booc(
 		SourcesSet   : ["src/Bake.example/**/*.boo"],
 		OutputFile   : "build/Bake.example.exe",
 		ReferencesSet: ["build/Bake.engine.dll"]
 		).Execute()
 
-Task("build tests") do (ctx):
-	pass
-/*
+Task "build tests":
 	Booc(
 		SourcesSet   : ["src/Bake.tests/**/*.boo"],
 		OutputFile   : "build/Bake.tests.dll",
@@ -76,4 +74,3 @@ Task("build tests") do (ctx):
 						"build/Bake.compiler.extensions.dll",
 						"nunit.framework.dll"]
 		).Execute()
-*/

@@ -1,8 +1,8 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Boobs</RootNamespace>
-    <AssemblyName>Boobs</AssemblyName>
+    <RootNamespace>Bake</RootNamespace>
+    <AssemblyName>Bake</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}</ProjectGuid>
@@ -28,10 +28,7 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Boo.Lang.Useful" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="BoobsCommandLine.boo" />
+    <Compile Include="BakeCommandLine.boo" />
     <Compile Include="Program.boo" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +44,10 @@
       <Project>{CA3F1436-9E06-410B-8C08-0E27B0DF652F}</Project>
       <Name>Bake.IO.Extensions</Name>
     </ProjectReference>
+    <Reference Include="Boo.Lang.Useful">
+      <HintPath>..\..\lib\Boo.Lang.Useful.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
 </Project>

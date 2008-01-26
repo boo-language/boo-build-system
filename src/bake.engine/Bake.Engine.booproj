@@ -28,13 +28,7 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Boo.Lang.Compiler">
-      <HintPath>..\..\lib\Boo.Lang.Compiler.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="BoobsEngine.boo" />
+    <Compile Include="BakeEngine.boo" />
     <Compile Include="AssemblyInfo.boo" />
     <Compile Include="CircularDependencyException.boo" />
     <Compile Include="Configuration.boo" />
@@ -45,11 +39,11 @@
     <Compile Include="SvnTask.boo" />
     <Compile Include="Task.boo" />
     <Compile Include="FileTask.boo" />
-    <Compile Include="Builder\BoobsEngineBuilder.boo" />
+    <Compile Include="Builder\BakeEngineBuilder.boo" />
     <Compile Include="Runner\ScriptLoader.boo" />
-    <Compile Include="Builder\LoadBoobsScriptException.boo" />
+    <Compile Include="Builder\LoadBakeScriptException.boo" />
     <Compile Include="Builder\CompileBoobsScriptException.boo" />
-    <Compile Include="Builder\BoobsBaseScript.boo" />
+    <Compile Include="Builder\BakeBaseScript.boo" />
     <Compile Include="TaskBlock.boo" />
     <Compile Include="BlockAlreadySetException.boo" />
     <Compile Include="DependencyGraphExecutor.boo" />
@@ -58,6 +52,10 @@
   <ItemGroup>
     <Folder Include="Builder" />
     <Folder Include="Runner" />
+    <Reference Include="Boo.Lang.Compiler">
+      <HintPath>..\..\lib\Boo.Lang.Compiler.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
 </Project>

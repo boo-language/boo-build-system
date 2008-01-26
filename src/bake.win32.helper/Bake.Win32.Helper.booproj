@@ -4,8 +4,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>Boobs.Win32.Helper</RootNamespace>
-    <AssemblyName>Boobs.Win32.Helper</AssemblyName>
+    <RootNamespace>Bake.Win32.Helper</RootNamespace>
+    <AssemblyName>Bake.Win32.Helper</AssemblyName>
     <NoStdLib>False</NoStdLib>
     <Ducky>False</Ducky>
   </PropertyGroup>
@@ -22,7 +22,10 @@
     <Optimize>True</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Boo.Lang.Useful" />
+    <Reference Include="Boo.Lang.Useful">
+      <HintPath>..\..\lib\Boo.Lang.Useful.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />

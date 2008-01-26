@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Boobs.Example</RootNamespace>
+    <RootNamespace>Bake.Example</RootNamespace>
     <AssemblyName>Bake.Example</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
