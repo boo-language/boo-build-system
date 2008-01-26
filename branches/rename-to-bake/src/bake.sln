@@ -2,17 +2,17 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 # SharpDevelop 2.2.1.2648
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Engine", "boobs.engine\Boobs.Engine.booproj", "{B86E7336-0498-486D-A199-FC19ED9740AF}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Engine", "bake.engine\Boobs.Engine.booproj", "{B86E7336-0498-486D-A199-FC19ED9740AF}"
 EndProject
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Example", "boobs.example\Boobs.Example.booproj", "{707667FA-CDCB-4756-9EF0-96DB18A53DCD}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Example", "bake.example\Boobs.Example.booproj", "{707667FA-CDCB-4756-9EF0-96DB18A53DCD}"
 EndProject
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs", "..\tools\boobs\Boobs.booproj", "{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake", "..\tools\boobs\Bake.booproj", "{67965CE0-A3FD-4D41-AE37-47DF2F6E539D}"
 EndProject
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.IO.Extensions", "extensions\boobs.io.extensions\Boobs.IO.Extensions.booproj", "{CA3F1436-9E06-410B-8C08-0E27B0DF652F}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.IO.Extensions", "extensions\bake.io.extensions\Boobs.IO.Extensions.booproj", "{CA3F1436-9E06-410B-8C08-0E27B0DF652F}"
 EndProject
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Tests", "boobs.tests\Boobs.Tests.booproj", "{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Tests", "bake.tests\Boobs.Tests.booproj", "{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}"
 EndProject
-Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Boobs.Compiler.Extensions", "extensions\boobs.compiler.extensions\Boobs.Compiler.Extensions.booproj", "{BA5A9FD1-0711-432C-830C-5CE35CDE3570}"
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "Bake.Compiler.Extensions", "extensions\bake.compiler.extensions\Bake.Compiler.Extensions.booproj", "{BA5A9FD1-0711-432C-830C-5CE35CDE3570}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50C963BA-D4F4-47CD-8FA4-0FCAC9068471}"
 	ProjectSection(SolutionItems) = postProject
