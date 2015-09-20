@@ -12,7 +12,6 @@ namespace Bake.Engine.Runner
 
 import System
 import System.IO
-import System.Reflection
 
 import Boo.Lang.Compiler
 import Boo.Lang.Compiler.Ast
@@ -76,10 +75,10 @@ class ScriptLoader:
 		compiler = BooCompiler()
 		compiler.Parameters.Ducky = true
 		compiler.Parameters.Pipeline = CompileToMemory()
-		compiler.Parameters.Input.Add(StringInput("<code>", code))
+		compiler.Parameters.Input.Add(StringInput("(code)", code))
 		compiler.Parameters.OutputType = CompilerOutputType.Library
 		
-		for reference as Assembly in _references:
+		for reference in _references:
 			compiler.Parameters.References.Add(reference)
 
 		pipeline = compiler.Parameters.Pipeline

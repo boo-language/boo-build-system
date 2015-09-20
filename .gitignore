@@ -3,3 +3,4 @@ obj
 /src/bake.tests/bin
 /src/extensions/bake.compiler.extensions/bin
 /src/packages
+*.pdb

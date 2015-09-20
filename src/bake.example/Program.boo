@@ -32,7 +32,7 @@ print "Running ${filename}"
 
 using f = File.OpenText(filename):
 	builder = BakeEngineBuilder(f)
-	options = {}
+	options = {"test": "Hello, Bake!"}
 	engine = builder.Build(options)
 	if engine:
 		engine.Execute()
