@@ -11,7 +11,6 @@
 namespace Bake.Example
 
 import System
-import System.Collections
 import System.IO
 import System.Reflection
 

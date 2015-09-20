@@ -16,6 +16,7 @@ import System.IO
 import System.Reflection
 
 import Boo.Lang.Compiler
+import Boo.Lang.Compiler.TypeSystem.Reflection
 
 import Bake.Engine
 import Bake.Engine.Runner
@@ -27,7 +28,7 @@ class BakeEngineBuilder:
 	_genObj as duck
 	
 	[getter(References)]
-	_references = AssemblyCollection()
+	_references = CompilerReferenceCollection(ReflectionTypeSystemProvider())
 
 	Errors as CompilerErrorCollection:
 		get:

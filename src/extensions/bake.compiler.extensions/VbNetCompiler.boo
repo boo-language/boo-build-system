@@ -18,10 +18,9 @@ import System.IO
 import System.Text.RegularExpressions
 import System.CodeDom.Compiler
 import System.Reflection
-import Microsoft.CSharp
 
 class Vbc(CompilerBase):
-	 
+	
 	static classRE = Regex("class\\s+(?<class>@?[\\w_][\\w\\d_]+)",RegexOptions.Compiled)
 	static namespaceRE = Regex("namespace\\s+(?<namespace>@?[\\w_][\\w\\d_\\.]+)",RegexOptions.Compiled)
 	
@@ -96,7 +95,7 @@ class Vbc(CompilerBase):
 		return super.NeedsCompiling()
 		
 	def GetFileNameSpace(path as string) as string:
-		 return FindRegExInFile(path,classRE, "class")
+		return FindRegExInFile(path,classRE, "class")
 		
 	def GetFileClass(path as string) as string:
 		return FindRegExInFile(path,namespaceRE, "namespace")

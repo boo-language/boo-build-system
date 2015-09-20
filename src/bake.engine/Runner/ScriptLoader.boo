@@ -19,6 +19,7 @@ import Boo.Lang.Compiler.Ast
 import Boo.Lang.Compiler.IO
 import Boo.Lang.Compiler.Pipelines
 import Boo.Lang.Compiler.Steps
+import Boo.Lang.Compiler.TypeSystem.Reflection
 
 internal class CreateRunnerStep(AbstractCompilerStep):
 	_baseTypeName as string
@@ -57,7 +58,7 @@ class ScriptLoader:
 	_result as CompilerContext
 
 	[getter(References)]
-	_references = AssemblyCollection()
+	_references = CompilerReferenceCollection(ReflectionTypeSystemProvider())
 	
 	[property(BaseTypeName)]
 	_baseTypeName as string

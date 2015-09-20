@@ -41,7 +41,7 @@ abstract class BuildBase(Exec):
 
 	# Build anyway, regardless of the timestamps
 	[property(ForceBuild)]
-	_forceBuild as bool	 
+	_forceBuild as bool
 	
 	# Print even more info
 	[property(Verbose)]

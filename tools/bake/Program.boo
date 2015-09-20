@@ -11,9 +11,7 @@
 namespace Bake
 
 import System
-import System.Collections
 import System.IO
-import System.Reflection
 
 import Boo.Lang.Useful.CommandLine
 

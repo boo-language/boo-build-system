@@ -84,7 +84,7 @@ class AssemblyLinker(BuildBase):
 			return true
 		raise NotImplementedException()
 
-	protected def CleanUp():
+	protected new def CleanUp():
 		super.CleanUp()
 
 

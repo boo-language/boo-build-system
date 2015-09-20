@@ -36,8 +36,8 @@ class FileSet:
 			_baseDir = baseDir
 		
 	# Escape windows' path seperator if neccecary
-	static _seperator = Path.DirectorySeparatorChar.ToString(CultureInfo.InvariantCulture).Replace("\\","\\\\")
-	 
+	static _separator = Path.DirectorySeparatorChar.ToString(CultureInfo.InvariantCulture).Replace("\\","\\\\")
+	
 	# replacements to do on the incoming patterns
 	# the right side is the regex, the left side the replacing string
 	# order IS meaningful
@@ -52,20 +52,20 @@ class FileSet:
 		("\\)","\\)"),
 		("\\+","\\+"),
 	# Select single character which is not a seperator
-		("\\?","[^"+_seperator+"]?"),
+		("\\?","[^"+_separator+"]?"),
 	# Replace /*/ or /* with a search for 1..n instead of 0..n
 	# This make sure that /*/ can't match "//" and that /ayende/* doesn't 
 	# match "/ayende/"
-		("(?<="+_seperator+")\\*(?=($|"+_seperator+"))","[^"+_seperator+"]+"),
+		("(?<="+_separator+")\\*(?=($|"+_separator+"))","[^"+_separator+"]+"),
 	# Handle matching in the current directory an in all subfolders, so things
 	# like src/**/*.cs will work
 	# the ".|" is a placeholder, to avoid overwriting the value in the next regexes
-		(_seperator + "\\*\\*" + _seperator, _seperator + "(.|?" + _seperator + ")?"),
-	   	("\\*\\*" + _seperator, ".|(?<=^|" + _seperator + ")"),
-	   	("\\*\\*",".|"),
-	   	("\\*","[^"+_seperator+"]*"),
+		(_separator + "\\*\\*" + _separator, _separator + "(.|?" + _separator + ")?"),
+		("\\*\\*" + _separator, ".|(?<=^|" + _separator + ")"),
+		("\\*\\*",".|"),
+		("\\*","[^"+_separator+"]*"),
 	# Here we fix all the .| problems we had before
-	   	("\\.\\|","\\.*"),
+		("\\.\\|","\\.*"),
 	# This handles the case where the path is recursive but it doesn't ends with a
 	# wild card, for example: **/bin, you want all the bin directories, but nothing more
 		("(?<=[^\\?\\*])$","$")

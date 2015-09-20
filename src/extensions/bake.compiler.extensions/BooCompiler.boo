@@ -81,7 +81,7 @@ class Booc(CompilerBase):
 		return value.StartsWith("\"") and value.EndsWith("\"")
 
 	def GetFileNameSpace(path as string) as string:
-		 return FindRegExInFile(path, _classNameRegex, "class")
+		return FindRegExInFile(path, _classNameRegex, "class")
 		
 	def GetFileClass(path as string) as string:
 		return FindRegExInFile(path, _namespaceRegex, "namespace")

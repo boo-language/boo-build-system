@@ -11,7 +11,6 @@
 namespace Bake.IO.Extensions
 
 import System
-import System.Collections.Generic
 import System.IO
 
 def Exist(name as string):

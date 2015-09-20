@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <ProjectGuid>{DA5848CA-DA97-4DF5-8D50-5B8EBF50E156}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -6,10 +7,20 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Bake.Tests</RootNamespace>
     <AssemblyName>Bake.Tests</AssemblyName>
+    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <NoStdLib>False</NoStdLib>
+    <Ducky>False</Ducky>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <Strict>False</Strict>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
-    <DebugSymbols>True</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -17,14 +28,21 @@
     <DebugSymbols>False</DebugSymbols>
     <DebugType>None</DebugType>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Boo.Lang.Useful">
-      <HintPath>..\..\lib\Boo.Lang.Useful.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Boo.Lang">
+      <HintPath>..\packages\Boo.0.9.4\lib\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="booc">
+      <HintPath>..\..\..\boo\build\booc.exe</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\..\..\..\Arquivos de programas\NUnit 2.4.1\bin\nunit.framework.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +51,7 @@
     <Compile Include="FileExtFixture.boo" />
     <Compile Include="FileSetFixture.boo" />
     <Compile Include="TaskFixture.boo" />
+    <None Include="packages.config" />
     <None Include="todo.txt" />
   </ItemGroup>
   <ItemGroup>

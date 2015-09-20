@@ -20,7 +20,7 @@ import System.Threading
 import System.Diagnostics
 
 class Exec:
-	 	 
+	
 	_name as string
 	_exePath as string
 	_baseDir as string = Environment.CurrentDirectory
@@ -49,7 +49,7 @@ class Exec:
 			if not _cmdLine:
 				return join(_args, ' ')
 			return _cmdLine
-	    
+	
 	BaseDirectory:
 		get:
 			return _baseDir
@@ -58,9 +58,9 @@ class Exec:
 			_baseDir = value
 	
 	def constructor(executable as string, commandLine as string):
-    	self()
-    	_exePath = executable
-    	_cmdLine = commandLine
+		self()
+		_exePath = executable
+		_cmdLine = commandLine
 	
 	def constructor():
 		Reset()

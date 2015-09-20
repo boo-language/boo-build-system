@@ -120,7 +120,7 @@ abstract class CompilerBase(BuildBase):
 		WriteOption("out", OutputFileInfo.FullName)
 		WriteOption("win32icon", Win32IconInfo.FullName) if Win32Icon
 		WriteOption("main", MainType) if MainType
-		WriteOption("warnaserror","") if WarnAsError	 
+		WriteOption("warnaserror","") if WarnAsError
 	
 		if SupressWarnings.Count>0:
 			if _supportSupressingWarnings:
@@ -169,7 +169,7 @@ abstract class CompilerBase(BuildBase):
 		resgen.Parent = self
 		resgen.Execute()
 		
-	protected def CleanUp():
+	protected new def CleanUp():
 		super.CleanUp()
 		if _tmpResources:
 			for resource in _tmpResources:

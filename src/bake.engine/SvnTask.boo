@@ -1,7 +1,6 @@
 namespace Bake.Engine
 
 import System
-import System.Diagnostics
 import System.Xml
 
 class SvnTask(Task):

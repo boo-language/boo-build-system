@@ -9,7 +9,6 @@
 #endregion
 
 import System.Reflection
-import System.Runtime.CompilerServices
 
 // Information about this assembly is defined by the following
 // attributes.

@@ -29,7 +29,7 @@ class ResourcesFileSet(FileSet):
 	_nameSpacePatterns = {}
 	
 	_cultures as IList
-	 
+	
 	# This regex is used in PrepareResourceName() to 
 	# replace all digits starting a namespace with _digit and convert any
 	# non alphanumeric charcter to _
@@ -93,7 +93,7 @@ class ResourcesFileSet(FileSet):
 				# doing it, so'll follow along for now.
 				resourceName += StripResourceCulture(Path.GetFileName(resourceName),culture)
 		return PrepareResourceName(resourceName)
-		                                        
+	
 	private def GetResourceFileName(resourceName as string) as string:
 		resNoExt = Path.GetFileNameWithoutExtension(resourceName)
 		resExt = Path.GetExtension(resourceName)                 
@@ -113,7 +113,7 @@ class ResourcesFileSet(FileSet):
 			if CheckPath(entry,path):
 				return _nameSpacePatterns[entry]
 		return null
-		  
+	
 	private def GetResourceBaseDir(resourceName as string) as string:
 		baseDir = BaseDirectory
 		baseDir += Path.DirectorySeparatorChar if baseDir.EndsWith(Path.DirectorySeparatorChar.ToString())
